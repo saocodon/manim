@@ -8,7 +8,7 @@ D = 9 # calculated as D * U
 lineLength = 10
 U = lineLength / ((D + 1) * 2)
 
-class ConvexLen(Scene):
+class ConvergingLen(Scene):
     def construct(self):
         text = Tex("Convex lens")
         text.scale(2)
@@ -85,7 +85,7 @@ class ConvexLen(Scene):
 
         self.wait()
 
-class ConvergingLen(Scene):
+class DivergingLen(Scene):
     def construct(self):
         text = Tex("Converging lens")
         text.scale(2)
