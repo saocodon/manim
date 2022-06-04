@@ -76,7 +76,7 @@ class ConvexLen(Scene):
         self.play(Write(d))
         self.play(Create(obj))
         self.play(Create(img_line))
-        self.play(tracker.animate.set_value(-D), run_time = 15)
+        self.play(tracker.animate.set_value(float(D * (-1))), run_time = 15)
         self.wait()
 
 class ConvergingLen(Scene):
@@ -142,5 +142,5 @@ class ConvergingLen(Scene):
         self.play(Write(d))
         self.play(Create(obj))
         self.play(Create(img_line))
-        self.play(tracker.animate.set_value(-D), run_time = 15)
+        self.play(tracker.animate.set_value(float(D * (-1))), run_time = 15)
         self.wait()
