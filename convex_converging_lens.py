@@ -76,7 +76,13 @@ class ConvexLen(Scene):
         self.play(Write(d))
         self.play(Create(obj))
         self.play(Create(img_line))
-        self.play(tracker.animate.set_value(float(D * (-1))), run_time = 15)
+
+        # This part is undefined at 0, which makes manim fail while rendering
+        self.play(tracker.animate.set_value(0.01), run_time = 7.5)
+
+        tracker = ValueTracker(-0.01);
+        self.play(tracker.animate.set_value(-D), run_time = 7.5)
+
         self.wait()
 
 class ConvergingLen(Scene):
@@ -142,5 +148,10 @@ class ConvergingLen(Scene):
         self.play(Write(d))
         self.play(Create(obj))
         self.play(Create(img_line))
-        self.play(tracker.animate.set_value(float(D * (-1))), run_time = 15)
+        # This part is undefined at 0, which makes manim fail while rendering
+        self.play(tracker.animate.set_value(0.01), run_time = 7.5)
+
+        tracker = ValueTracker(-0.01);
+        self.play(tracker.animate.set_value(-D), run_time = 7.5)
+
         self.wait()
